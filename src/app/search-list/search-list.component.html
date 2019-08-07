@@ -1,0 +1,26 @@
+<div class="row mb-2" *ngFor="let component of results; let i = index">
+  <div class="col-lg-8">
+    <div *ngIf="i==0">
+      <div>
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between">
+            <h5 (click)="onClick(component)" style="cursor: pointer">{{component.name}}</h5>
+            <div>
+              <i *ngIf="!expand" class="fas fa-arrow-circle-down fa-2x" (click)="expand=true"
+                style="cursor: pointer"></i>
+              <i *ngIf="expand" class="fas fa-arrow-circle-up fa-2x" (click)="expand=false" style="cursor: pointer"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div *ngIf="expand">
+      <ul class="list-group" *ngIf="i>0">
+        <li class="list-group-item" (click)="onClick(component)" style="cursor: pointer">
+          <h5>{{component.name}}</h5><br>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="row ml-1">
+        <div *ngFor="let component of myList" class="list-group list-group col-sm-6 col-md-4 col-xl-2 ">
+                <div class="d-inline-block result list-group-item mb-2 text-center">
+                        <div class=" d-flex justify-content-end">
+                                <i class="fas fa-times fa-2x" (click)="onDelete(component)" style="cursor: pointer;"
+                                        tooltip="Delete Record" placement="bottom"></i>
+                        </div>
+                        <h3> {{component.name}} </h3>
+                        <br>
+                        <h3 class="card-title text-center">{{component.temp | number:'1.0-0'}}&deg;C</h3>
+                        <br>
+                        <h4 class="card-text">{{component.summary}}</h4>
+                        <div class="bottom">
+                                <p>Aktualizowane: {{component.time*1000 | date: 'yyyy/MM/dd h:mm:ss a'}}</p>
+
+                        </div>
+
+
+
+                </div>
+
+
+        </div>
+</div>
